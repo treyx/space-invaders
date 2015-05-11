@@ -4,6 +4,8 @@
     var screen = canvas.getContext("2d");
     var gameSize = { x: canvas.width, y: canvas.height };
 
+    this.bodies = [new Player(this, gameSize)];
+
     var self = this;
     var tick = function() {
       self.update();
@@ -25,6 +27,12 @@
 
     }
 
+  };
+
+  var Player = function(game, gameSize) {
+    this.game = game;
+    this.size = { x: 15, y: 15 };
+    this.center = { x: gameSize.x / 2, y: gamesize.y - this.size.x };
   };
 
   window.onload = function() {
