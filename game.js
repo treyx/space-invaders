@@ -21,17 +21,14 @@
       for (var i = 0; i < this.bodies.length; i++) {
         this.bodies[i].update();
       }
-
     },
 
     draw: function(screen, gameSize) {
+      screen.clearRect(0, 0, gameSize.x, gameSize.y);
       for (var i = 0; i < this.bodies.length; i++) {
         drawRect(screen, this.bodies[i]);
       }
-
-
     }
-
   };
 
   var Player = function(game, gameSize) {
@@ -48,7 +45,6 @@
       } else if (this.keyboarder.isDown(this.keyboarder.KEYS.RIGHT)) {
         this.center.x += 2;
       }
-
     }
   };
 
