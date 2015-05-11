@@ -8,12 +8,20 @@
     var tick = function() {
       self.update();
       self.draw(screen, gameSize);
+      requestAnimationFrame(tick);
     };
 
     tick ();
   };
 
   Game.prototype = {
+    update: function(){
+
+    },
+
+    draw: function() {
+
+    }
 
   };
 
