@@ -19,7 +19,9 @@
 
     },
 
-    draw: function() {
+    draw: function(screen, gameSize) {
+      screen.fillRect(30, 30, 40, 40);
+
 
     }
 
