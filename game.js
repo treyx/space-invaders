@@ -88,7 +88,7 @@
   }
 
   var Bullet = function(center, velocity) {
-    this.size = { x: 30, y: 30 };
+    this.size = { x: 3, y: 3 };
     this.center = center;
     this.velocity = velocity;
   };
@@ -123,6 +123,14 @@
 
     this.KEYS = { LEFT: 37, RIGHT: 39, SPACE: 32 };
 
+  };
+
+  var colliding = function(b1, b2) {
+    return !(b1 === b2 ||
+             b1.center.x + b1.size.x / 2 < b2.center.x - b2.size.x / 2 ||
+             b1.center.y + b1.size.y / 2 < b2.center.y - b2.size.y / 2 ||
+             b1.center.x + b1.size.x / 2 > b2.center.x - b2.size.x / 2 ||
+             b1.center.y + b1.size.y / 2 > b2.center.y - b2.size.y / 2);
   };
 
   window.onload = function() {
